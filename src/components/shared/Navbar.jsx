@@ -1,3 +1,5 @@
+"use client"
+import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -6,6 +8,8 @@ import { IoIosSearch } from "react-icons/io";
 
 
 const Navbar = () => {
+    const session = useSession()
+    console.log(session);
     const links = [
         {
             title:"Home",
@@ -42,7 +46,7 @@ const Navbar = () => {
                 <FiShoppingBag className='text-2xl'/>
                 <IoIosSearch className='text-2xl' />
                 <button className='btn btn-primary btn-outline'>Appointment</button>
-                <Link href={'/login'}><button className='btn btn-primary'>Login</button></Link>
+                {!session.data ? <Link href={'/login'}><button className='btn btn-primary'>Login</button></Link> : <button onClick={()=> signOut()} className='btn btn-primary'>Logout</button>}
             </div>
         </nav>
     );
