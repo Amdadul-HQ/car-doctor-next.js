@@ -42,6 +42,7 @@ const Navbar = () => {
                 <FiShoppingBag className='text-2xl'/>
                 <IoIosSearch className='text-2xl' />
                 <button className='btn btn-primary btn-outline'>Appointment</button>
+                <Link href={'/login'}><button className='btn btn-primary'>Login</button></Link>
             </div>
         </nav>
     );
