@@ -5,7 +5,7 @@ import React from 'react';
 
 const ServiceDetails = async ({params}) => {
     const {service} = await getServiceDetails(params.id)
-    const {img,title,description,facility,price} = service
+    const {img,title,description,facility,price,_id} = service
     console.log(service);
     return (
         <section className='container mx-auto my-10'>
@@ -34,7 +34,7 @@ const ServiceDetails = async ({params}) => {
                 </div>
                 <div>
                     <h1 className='text-4xl font-bold'>PRICE: $ {price}</h1>
-                    <Link href={'/'}><button className='text-xl text-white w-full btn btn-primary'>Proceed Checkout</button></Link>
+                    <Link href={`/checkout/${_id}`}><button className='text-xl text-white w-full btn btn-primary'>Proceed Checkout</button></Link>
                 </div>
             </div>
         </section>
