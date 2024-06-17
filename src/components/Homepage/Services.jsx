@@ -1,9 +1,15 @@
 import React from 'react';
 import Card from './Card';
-import {services} from '../lib/services'
+import { getServices } from '../services/getServices';
 
-const Services = () => {
+// const getServices = async()=>{
+//     const res = await fetch('http://localhost:3000/services/api/getAll')
+//     const services = res.json()
+//     return services
+// }
 
+const Services = async () => {
+    const {services} = await getServices()
     return (
         <section className='my-32 max-w-screen-xl mx-auto'>
            <div className="space-y-4">

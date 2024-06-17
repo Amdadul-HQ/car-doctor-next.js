@@ -15,7 +15,7 @@ const Card = ({item}) => {
         <p className="text-primary text-xl font-semibold">
           Price: ${item.price}
         </p>
-        <Link href={'/'}>
+        <Link href={`/services/${item._id}`}>
           <button className="text-primary p-6 border scale-75 hover:scale-100 hover:text-black hover:bg-orange transition duration-300 rounded-full">
             <FaArrowRightLong />
           </button>
